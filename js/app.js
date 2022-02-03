@@ -1,6 +1,6 @@
 // METAMASK CONNECTION
 const TIMEOUT = 1000;
-const COLLECTION_NAME = 'CodeCats';
+const COLLECTION_NAME = 'BizimNFTler';
 let editions = [];
 let dots = 1;
 
@@ -11,9 +11,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const updateButton = async () => {
     if (!MetaMaskOnboarding.isMetaMaskInstalled()) {
-      onboardButton.innerText = 'Install MetaMask!';
+      onboardButton.innerText = 'Bagla o cuzdani!';
       onboardButton.onclick = () => {
-        onboardButton.innerText = 'Connecting...';
+        onboardButton.innerText = 'Baglaniyor...';
         onboardButton.disabled = true;
         onboarding.startOnboarding();
       };
@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
       onboarding.stopOnboarding();
       checkOwner(accounts[0]);
     } else {
-      onboardButton.innerText = 'Connect MetaMask!';
+      onboardButton.innerText = 'Bagla o cuzdani!';
       onboardButton.onclick = async () => {
         await window.ethereum.request({
           method: 'eth_requestAccounts',
@@ -80,7 +80,7 @@ function updateStatusText(isOwner, checking) {
     if(isOwner) {
       statusText.innerText = `You do own ${COLLECTION_NAME}!! 😻 Let's see how many${renderDots(dots)}`;
     } else {
-      statusText.innerText = `Checking to see if you own any ${COLLECTION_NAME} 😻${renderDots(dots)}`;
+      statusText.innerText = `Bakalim koleksiyonun var mi? ${COLLECTION_NAME} 😻${renderDots(dots)}`;
     }
   } else {
     if(isOwner) {
